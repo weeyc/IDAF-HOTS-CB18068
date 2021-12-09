@@ -1,25 +1,11 @@
 <?php
 
-use App\Http\Controllers\PullController;
+use App\Http\Controllers\Controller_CB18068;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-Route::get('/',[PullController::class, 'getStudent'])->name('filter');
-Route::post('/create_student',[PullController::class, 'createStudent'])->name('createStudent');
-Route::post('/update_student/{id}',[PullController::class, 'updateStudent'])->name('updateStudent');
-Route::get('/edit/{id}',[PullController::class, 'editStudent'])->name('editStudent');
-Route::get('/delete/{id}',[PullController::class, 'deleteStudent'])->name('deleteStudent');
+Route::get('/',[Controller_CB18068::class, 'getStudent'])->name('retrieveStudent');
+Route::post('/create_student',[Controller_CB18068::class, 'createStudent'])->name('createStudent');
+Route::get('/delete/{id}',[Controller_CB18068::class, 'deleteStudent'])->name('deleteStudent');
 
 
 
